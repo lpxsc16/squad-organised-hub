@@ -6,6 +6,8 @@ function makeMontage(fname, nDisplay)
 %makeMontage('~/data/subject-C/mprage.nii.gz', 20)
 %20 = number of slices returned 
 
+fname = 'mprage.nii';
+
 %load data 
 data = niftiread(fname);
 
@@ -21,6 +23,6 @@ nSlices = size(data, 3);
 idx = round(linspace(1, nSlices, nDisplay));
 
 %makeMontage with MATLAB command
-montage(dataP, 'Indicies', idx, 'DisplayRange', robustRange);
+montage(dataP, 'Indices', idx, 'DisplayRange', robustRange);
 
 end
