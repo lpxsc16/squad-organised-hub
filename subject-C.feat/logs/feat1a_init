@@ -1,0 +1,6 @@
+</pre><hr>Initialisation<br><pre>
+
+/usr/local/fsl-6.0.1/bin/fslmaths /Users/lpxsc16/data/subject-C/CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2 prefiltered_func_data -odt float
+Total original volumes = 192
+
+/usr/local/fsl-6.0.1/bin/fslroi prefiltered_func_data example_func 96 1

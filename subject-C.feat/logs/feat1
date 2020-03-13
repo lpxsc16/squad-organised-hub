@@ -1,0 +1,21 @@
+
+/bin/cp /tmp/feat_5nFs7z.fsf design.fsf
+
+/usr/local/fsl-6.0.1/bin/feat_model design
+
+mkdir .files;cp /usr/local/fsl-6.0.1/doc/fsl.css .files;cp -r /usr/local/fsl-6.0.1/doc/images .files/images
+
+/usr/local/fsl-6.0.1/bin/fsl_sub -T 10 -l logs -N feat0_init   /usr/local/fsl-6.0.1/bin/feat /Users/lpxsc16/data/subject-C.feat/design.fsf -D /Users/lpxsc16/data/subject-C.feat -I 1 -init
+25102
+
+/usr/local/fsl-6.0.1/bin/fsl_sub -T 49 -l logs -N feat2_pre -j 25102  /usr/local/fsl-6.0.1/bin/feat /Users/lpxsc16/data/subject-C.feat/design.fsf -D /Users/lpxsc16/data/subject-C.feat -I 1 -prestats
+25181
+
+/usr/local/fsl-6.0.1/bin/fsl_sub -T 2 -l logs -N feat3_film -j 25181  /usr/local/fsl-6.0.1/bin/feat /Users/lpxsc16/data/subject-C.feat/design.fsf -D /Users/lpxsc16/data/subject-C.feat -I 1 -stats
+26199
+
+/usr/local/fsl-6.0.1/bin/fsl_sub -T 119 -l logs -N feat4_post -j 26199  /usr/local/fsl-6.0.1/bin/feat /Users/lpxsc16/data/subject-C.feat/design.fsf -D /Users/lpxsc16/data/subject-C.feat -poststats 0 
+26421
+
+/usr/local/fsl-6.0.1/bin/fsl_sub -T 1 -l logs -N feat5_stop -j 25181,26199,26421  /usr/local/fsl-6.0.1/bin/feat /Users/lpxsc16/data/subject-C.feat/design.fsf -D /Users/lpxsc16/data/subject-C.feat -stop
+27941
