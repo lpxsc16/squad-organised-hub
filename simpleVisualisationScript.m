@@ -65,7 +65,7 @@ nSlices = size(data,3);
 nDisplay = 10;
 idx = round(linspace(1, nSlices, nDisplay)); %gives round numbers- can't index into decimals
 
-montage(data, 'Indicies', idx);
+montage(data, 'Indices', idx);
 
 %% fix display range
 
@@ -78,7 +78,7 @@ montage(data, 'Indicies', idx);
     
 robustRange = prctile(data(:), [5, 95]);
 
-montage(data, 'Indicies', idx, 'DisplayRange', robustRange);
+montage(data, 'Indices', idx, 'DisplayRange', robustRange);
 
 %% switch x and y values so that orientation of output is fixed - 
     % permuting the dimensions
@@ -86,5 +86,5 @@ montage(data, 'Indicies', idx, 'DisplayRange', robustRange);
     dataP = permute(data, [2, 1, 3]);
     
     
-montage(dataP, 'Indicies', idx, 'DisplayRange', robustRange);
+montage(dataP, 'Indices', idx, 'DisplayRange', robustRange);
 
